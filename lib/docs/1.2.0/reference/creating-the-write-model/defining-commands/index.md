@@ -69,3 +69,9 @@ If an event does not have any data, you can omit the second parameter:
 ```javascript
 invoice.events.publish('issued');
 ```
+
+:::hint-warning
+> **Does your event create or update an aggregate?**
+>
+> Events you publish will either create a new aggregate or add to an existing aggregate. Make sure your incoming aggregate has an ID if your event is meant to update an existing aggregate. In the example above you can check this by ensuring that `invoice.id` exists.
+:::
